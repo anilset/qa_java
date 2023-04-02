@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class LionTest {
@@ -18,7 +18,7 @@ public class LionTest {
         this.expectedHasMane = expectedHasMane;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters (name = "{index}: Семейство{0}, Пол{1}, Есть ли грива{2}")
     public static Object[][] getTestData() {
         return new Object[][]{
                 {new Feline(), "Самец", true },
@@ -29,6 +29,6 @@ public class LionTest {
     @Test
     public void doesHaveManeTest() throws Exception {
         Lion lion = new Lion(sex, feline);
-        assertTrue(expectedHasMane == lion.doesHaveMane());
+        assertEquals(expectedHasMane, lion.doesHaveMane());
     }
 }

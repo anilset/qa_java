@@ -17,7 +17,7 @@ public class AnimalGetFoodTest {
         this.animalKind = animalKind;
         this.expectedMenu = expectedMenu;
     }
-    @Parameterized.Parameters
+    @Parameterized.Parameters (name = "{index}: Тип животного {0}, Рацион {1}")
     public static Object[][] getAnimalKinds() {
         return new Object[][] {
                 {"Травоядное", List.of("Трава", "Различные растения")},
@@ -30,6 +30,5 @@ public class AnimalGetFoodTest {
         Animal animal = new Animal();
         List <String> actualFood = animal.getFood(animalKind);
         assertTrue(actualFood.containsAll(expectedMenu));
-        //assertEquals(expectedMenu, actualFood);
     }
 }

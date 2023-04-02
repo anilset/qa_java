@@ -3,7 +3,7 @@ package com.example;
 public class Lion extends Feline {
 
     boolean hasMane;
-    Predator predator;
+    Feline feline;
 
     public Lion(String sex, Feline feline) throws Exception {
         if ("Самец".equals(sex)) {
@@ -12,7 +12,7 @@ public class Lion extends Feline {
             hasMane = false;
         } else {
             throw new Exception("Используйте допустимые значения пола животного - самец или самка");
-        } this.predator = feline;
+        } this.feline = feline;
     }
 
     public boolean doesHaveMane() {
