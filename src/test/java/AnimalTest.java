@@ -13,7 +13,7 @@ public class AnimalTest {
     }
 
     @Test
-    public void checkGetFoodExceptionMessage() throws Exception {
+    public void checkGetFoodExceptionMessage() {
         Animal animal = new Animal();
         String[] animalKinds = {"Всеядное", "Cat", "Lion", null};
         for (String kind: animalKinds) {
